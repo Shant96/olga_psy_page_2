@@ -1,0 +1,6 @@
+{
+  "source": "assets/video/IMG_2240.MP4",
+  "fps": 8,
+  "framePattern": "assets/video/intro_2240_frames/frame_%04d.jpg",
+  "frameCount": 69
+}

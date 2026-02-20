@@ -1,0 +1,63 @@
+{
+  "meta": {
+    "version": 1,
+    "basePage": "index.html",
+    "viewport": {
+      "width": 1512,
+      "height": 982
+    },
+    "notes": "visuals[] заполняется вручную через coordinator.html. Координаты в процентах экрана."
+  },
+  "sections": [
+    {
+      "id": "story-video",
+      "label": "Видео (старт)",
+      "textSelector": "#story-video",
+      "minDistanceFromTextPct": 6
+    },
+    {
+      "id": "intro",
+      "label": "Мысли",
+      "textSelector": "#intro .storm-wrap",
+      "minDistanceFromTextPct": 7
+    },
+    {
+      "id": "support",
+      "label": "Ты не один",
+      "textSelector": "#support .support-content",
+      "minDistanceFromTextPct": 8
+    },
+    {
+      "id": "services",
+      "label": "С чем работаю",
+      "textSelector": "#services .section-layout > div",
+      "minDistanceFromTextPct": 7
+    },
+    {
+      "id": "process",
+      "label": "Как проходит",
+      "textSelector": "#process .section-layout > div",
+      "minDistanceFromTextPct": 7
+    },
+    {
+      "id": "about",
+      "label": "Обо мне",
+      "textSelector": "#about .section-layout > div",
+      "minDistanceFromTextPct": 7
+    },
+    {
+      "id": "faq",
+      "label": "FAQ",
+      "textSelector": "#faq .screen-content",
+      "minDistanceFromTextPct": 7
+    },
+    {
+      "id": "contacts",
+      "label": "Контакты",
+      "textSelector": "#contacts .screen-content",
+      "minDistanceFromTextPct": 7
+    }
+  ],
+  "visuals": []
+}
+

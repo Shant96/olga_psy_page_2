@@ -1,0 +1,1308 @@
+{
+  "generatedAt": "2026-02-19T16:06:07.530Z",
+  "roots": [
+    "assets",
+    "assets 2",
+    "assets 3"
+  ],
+  "uniqueCount": 87,
+  "items": [
+    {
+      "id": "asset_0001",
+      "file": "assets/library/extracted/girl_corrected_group5.png",
+      "name": "girl_corrected_group5",
+      "ext": "png",
+      "kind": "photo",
+      "sourceRoot": "assets",
+      "bytes": 664260,
+      "sha1": "00c109ec3175c41f5a415c1535f4d016147f4195",
+      "duplicates": [
+        "assets/library/extracted/girl_corrected_group5.png",
+        "assets 2/library/extracted/girl_corrected_group5.png",
+        "assets 3/library/extracted/girl_corrected_group5.png"
+      ]
+    },
+    {
+      "id": "asset_0002",
+      "file": "assets/library/extracted/layer_120.png",
+      "name": "layer_120",
+      "ext": "png",
+      "kind": "line",
+      "sourceRoot": "assets",
+      "bytes": 5742,
+      "sha1": "fbdd44a6ef99be50610af5af58a27a2a17399590",
+      "duplicates": [
+        "assets/library/extracted/layer_120.png",
+        "assets 2/library/extracted/layer_120.png"
+      ]
+    },
+    {
+      "id": "asset_0003",
+      "file": "assets/library/extracted/layer_120.svg",
+      "name": "layer_120",
+      "ext": "svg",
+      "kind": "line",
+      "sourceRoot": "assets",
+      "bytes": 8353,
+      "sha1": "f18279cb81b1931a15bc65c7f77ca7af0f676ea6",
+      "duplicates": [
+        "assets/library/extracted/layer_120.svg",
+        "assets 2/library/extracted/layer_120.svg"
+      ]
+    },
+    {
+      "id": "asset_0004",
+      "file": "assets/library/extracted/layer_28.png",
+      "name": "layer_28",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 25765,
+      "sha1": "9677c43e0fa7304dedcdd2b31dc29557d99b4f54",
+      "duplicates": [
+        "assets/library/extracted/layer_28.png",
+        "assets 2/library/extracted/layer_28.png"
+      ]
+    },
+    {
+      "id": "asset_0005",
+      "file": "assets/library/extracted/layer_28.svg",
+      "name": "layer_28",
+      "ext": "svg",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 37897,
+      "sha1": "1888bc856d941d96f776317684865e72489da6f7",
+      "duplicates": [
+        "assets/library/extracted/layer_28.svg",
+        "assets 2/library/extracted/layer_28.svg"
+      ]
+    },
+    {
+      "id": "asset_0006",
+      "file": "assets/library/extracted/layer_40.png",
+      "name": "layer_40",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 11151,
+      "sha1": "581fa23f25dba7f6b39f5844b35ef0f5d8bafc9b",
+      "duplicates": [
+        "assets/library/extracted/layer_40.png",
+        "assets 2/library/extracted/layer_40.png"
+      ]
+    },
+    {
+      "id": "asset_0007",
+      "file": "assets/library/extracted/layer_40.svg",
+      "name": "layer_40",
+      "ext": "svg",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 15569,
+      "sha1": "71b5abf969bfa6bdc466fd85c4061156e18dcdd1",
+      "duplicates": [
+        "assets/library/extracted/layer_40.svg",
+        "assets 2/library/extracted/layer_40.svg"
+      ]
+    },
+    {
+      "id": "asset_0008",
+      "file": "assets/library/extracted/layer_53.png",
+      "name": "layer_53",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 4799,
+      "sha1": "879ff0b57e81806453b02a2900ea9405967f5043",
+      "duplicates": [
+        "assets/library/extracted/layer_53.png",
+        "assets 2/library/extracted/layer_53.png"
+      ]
+    },
+    {
+      "id": "asset_0009",
+      "file": "assets/library/extracted/layer_53.svg",
+      "name": "layer_53",
+      "ext": "svg",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 7829,
+      "sha1": "b359da965ed7b39bf7a3f1dab802ed3fdd44c516",
+      "duplicates": [
+        "assets/library/extracted/layer_53.svg",
+        "assets 2/library/extracted/layer_53.svg"
+      ]
+    },
+    {
+      "id": "asset_0010",
+      "file": "assets/library/extracted/layer_55.png",
+      "name": "layer_55",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 3429,
+      "sha1": "907875b29b43e2ee4ab2d423dd4a2984ed8570d4",
+      "duplicates": [
+        "assets/library/extracted/layer_55.png",
+        "assets 2/library/extracted/layer_55.png"
+      ]
+    },
+    {
+      "id": "asset_0011",
+      "file": "assets/library/extracted/layer_55.svg",
+      "name": "layer_55",
+      "ext": "svg",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 5749,
+      "sha1": "88e771853526afd07075e449af0bb20d52474346",
+      "duplicates": [
+        "assets/library/extracted/layer_55.svg",
+        "assets 2/library/extracted/layer_55.svg"
+      ]
+    },
+    {
+      "id": "asset_0012",
+      "file": "assets/library/extracted/layer_56.png",
+      "name": "layer_56",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 5052,
+      "sha1": "66bd65eb120f7fa8777b51ef711da52797477ba9",
+      "duplicates": [
+        "assets/library/extracted/layer_56.png",
+        "assets 2/library/extracted/layer_56.png"
+      ]
+    },
+    {
+      "id": "asset_0013",
+      "file": "assets/library/extracted/layer_56.svg",
+      "name": "layer_56",
+      "ext": "svg",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 7920,
+      "sha1": "025690cfb8aa006c82bad0056d29024d39372644",
+      "duplicates": [
+        "assets/library/extracted/layer_56.svg",
+        "assets 2/library/extracted/layer_56.svg"
+      ]
+    },
+    {
+      "id": "asset_0014",
+      "file": "assets/library/extracted/layer_75.png",
+      "name": "layer_75",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 24774,
+      "sha1": "7564e82799b282cd4246730ea7eaa9d1ba62a6f3",
+      "duplicates": [
+        "assets/library/extracted/layer_75.png",
+        "assets 2/library/extracted/layer_75.png"
+      ]
+    },
+    {
+      "id": "asset_0015",
+      "file": "assets/library/extracted/layer_75.svg",
+      "name": "layer_75",
+      "ext": "svg",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 58149,
+      "sha1": "6ea2cc69f91023f937c2a6e0e7ecfbdcb48884ba",
+      "duplicates": [
+        "assets/library/extracted/layer_75.svg",
+        "assets 2/library/extracted/layer_75.svg"
+      ]
+    },
+    {
+      "id": "asset_0016",
+      "file": "assets/library/extracted/layer_77.png",
+      "name": "layer_77",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 8098,
+      "sha1": "d03b4bf9639ca9b8d05b1e5ded648b3a4bd826a6",
+      "duplicates": [
+        "assets/library/extracted/layer_77.png",
+        "assets 2/library/extracted/layer_77.png"
+      ]
+    },
+    {
+      "id": "asset_0017",
+      "file": "assets/library/extracted/layer_77.svg",
+      "name": "layer_77",
+      "ext": "svg",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 12241,
+      "sha1": "cef3956775cbaaef39e62c059b52945feccf3cad",
+      "duplicates": [
+        "assets/library/extracted/layer_77.svg",
+        "assets 2/library/extracted/layer_77.svg"
+      ]
+    },
+    {
+      "id": "asset_0018",
+      "file": "assets/library/extracted/layer_82.png",
+      "name": "layer_82",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 5849,
+      "sha1": "e04e50f4eda75d3e16a29d17b3a9ace7eb063bd0",
+      "duplicates": [
+        "assets/library/extracted/layer_82.png",
+        "assets 2/library/extracted/layer_82.png"
+      ]
+    },
+    {
+      "id": "asset_0019",
+      "file": "assets/library/extracted/layer_82.svg",
+      "name": "layer_82",
+      "ext": "svg",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 8497,
+      "sha1": "52ac89b1352e1ea0edca357ffc56ec4cdc50da9e",
+      "duplicates": [
+        "assets/library/extracted/layer_82.svg",
+        "assets 2/library/extracted/layer_82.svg"
+      ]
+    },
+    {
+      "id": "asset_0020",
+      "file": "assets/paper_bg_1080.png",
+      "name": "paper_bg_1080",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 733214,
+      "sha1": "5d64d5d3218a3bf22e1bed2e368c03ee7ad9e601",
+      "duplicates": [
+        "assets/paper_bg_1080.png",
+        "assets 2/paper_bg_1080.png"
+      ]
+    },
+    {
+      "id": "asset_0021",
+      "file": "assets/paper_bg_2048.png",
+      "name": "paper_bg_2048",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 1261205,
+      "sha1": "e086cfe1fad863a8c9f7d7f7280f83d13380c082",
+      "duplicates": [
+        "assets/paper_bg_2048.png",
+        "assets 2/paper_bg_2048.png"
+      ]
+    },
+    {
+      "id": "asset_0022",
+      "file": "assets/scene1/layer_12_copy_2_pixel.png",
+      "name": "layer_12_copy_2_pixel",
+      "ext": "png",
+      "kind": "line",
+      "sourceRoot": "assets",
+      "bytes": 23230,
+      "sha1": "a82b7c447ab7775059d8055a2339113920872a75",
+      "duplicates": [
+        "assets/scene1/layer_12_copy_2_pixel.png",
+        "assets 2/scene1/layer_12_copy_2_pixel.png",
+        "assets 3/scene1/layer_12_copy_2_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0023",
+      "file": "assets/scene1/layer_12_copy_3_pixel.png",
+      "name": "layer_12_copy_3_pixel",
+      "ext": "png",
+      "kind": "line",
+      "sourceRoot": "assets",
+      "bytes": 33161,
+      "sha1": "75f984a7411a8d8069d357c5c2c85e0bc7a4be90",
+      "duplicates": [
+        "assets/scene1/layer_12_copy_3_pixel.png",
+        "assets 2/scene1/layer_12_copy_3_pixel.png",
+        "assets 3/scene1/layer_12_copy_3_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0024",
+      "file": "assets/scene1/layer_38_pixel.png",
+      "name": "layer_38_pixel",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 1204094,
+      "sha1": "8582f315d291f0bd1ce992e550baf26613b8fdb7",
+      "duplicates": [
+        "assets/scene1/layer_38_pixel.png",
+        "assets/scene2/layer_44_pixel.png",
+        "assets/scene5/layer_35_pixel.png",
+        "assets 2/scene1/layer_38_pixel.png",
+        "assets 2/scene2/layer_44_pixel.png",
+        "assets 2/scene5/layer_35_pixel.png",
+        "assets 3/scene1/layer_38_pixel.png",
+        "assets 3/scene2/layer_44_pixel.png",
+        "assets 3/scene5/layer_35_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0025",
+      "file": "assets/scene1/layer_39_smartobject.png",
+      "name": "layer_39_smartobject",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 22677,
+      "sha1": "e85cbed30dadb98232e2d51ac0859638e14377ce",
+      "duplicates": [
+        "assets/scene1/layer_39_smartobject.png",
+        "assets 2/scene1/layer_39_smartobject.png",
+        "assets 3/scene1/layer_39_smartobject.png"
+      ]
+    },
+    {
+      "id": "asset_0026",
+      "file": "assets/scene1/layer_40_pixel.png",
+      "name": "layer_40_pixel",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 7470,
+      "sha1": "73b9ab139579c279035faf46fb81a144c2a29672",
+      "duplicates": [
+        "assets/scene1/layer_40_pixel.png",
+        "assets 2/scene1/layer_40_pixel.png",
+        "assets 3/scene1/layer_40_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0027",
+      "file": "assets/scene1/layer_42_copy_2_smartobject.png",
+      "name": "layer_42_copy_2_smartobject",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 6279,
+      "sha1": "d6a79358f4f6d19fc9e81622820ac37384a909e4",
+      "duplicates": [
+        "assets/scene1/layer_42_copy_2_smartobject.png",
+        "assets/scene2/layer_42_copy_2_smartobject.png",
+        "assets 2/scene1/layer_42_copy_2_smartobject.png",
+        "assets 2/scene2/layer_42_copy_2_smartobject.png",
+        "assets 3/scene1/layer_42_copy_2_smartobject.png",
+        "assets 3/scene2/layer_42_copy_2_smartobject.png"
+      ]
+    },
+    {
+      "id": "asset_0028",
+      "file": "assets/scene1/layer_42_copy_3_smartobject.png",
+      "name": "layer_42_copy_3_smartobject",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 9577,
+      "sha1": "e2805c49287a7d3984a1bd66557c2939fb06dafb",
+      "duplicates": [
+        "assets/scene1/layer_42_copy_3_smartobject.png",
+        "assets/scene2/layer_42_copy_3_smartobject.png",
+        "assets 2/scene1/layer_42_copy_3_smartobject.png",
+        "assets 2/scene2/layer_42_copy_3_smartobject.png",
+        "assets 3/scene1/layer_42_copy_3_smartobject.png",
+        "assets 3/scene2/layer_42_copy_3_smartobject.png"
+      ]
+    },
+    {
+      "id": "asset_0029",
+      "file": "assets/scene1/layer_42_copy_4_smartobject.png",
+      "name": "layer_42_copy_4_smartobject",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 2739,
+      "sha1": "93c7a566d4537c7d4399836bf186d804d83331c8",
+      "duplicates": [
+        "assets/scene1/layer_42_copy_4_smartobject.png",
+        "assets/scene2/layer_42_copy_4_smartobject.png",
+        "assets 2/scene1/layer_42_copy_4_smartobject.png",
+        "assets 2/scene2/layer_42_copy_4_smartobject.png",
+        "assets 3/scene1/layer_42_copy_4_smartobject.png",
+        "assets 3/scene2/layer_42_copy_4_smartobject.png"
+      ]
+    },
+    {
+      "id": "asset_0030",
+      "file": "assets/scene1/layer_42_copy_smartobject.png",
+      "name": "layer_42_copy_smartobject",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 6226,
+      "sha1": "6758b06adde0194e750888c639792f96c421e6e2",
+      "duplicates": [
+        "assets/scene1/layer_42_copy_smartobject.png",
+        "assets/scene2/layer_42_copy_smartobject.png",
+        "assets 2/scene1/layer_42_copy_smartobject.png",
+        "assets 2/scene2/layer_42_copy_smartobject.png",
+        "assets 3/scene1/layer_42_copy_smartobject.png",
+        "assets 3/scene2/layer_42_copy_smartobject.png"
+      ]
+    },
+    {
+      "id": "asset_0031",
+      "file": "assets/scene1/layer_42_smartobject.png",
+      "name": "layer_42_smartobject",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 4592,
+      "sha1": "57db6d6dbbbdc767c0fb0caeaabeba2e456f6696",
+      "duplicates": [
+        "assets/scene1/layer_42_smartobject.png",
+        "assets/scene2/layer_68_smartobject.png",
+        "assets 2/scene1/layer_42_smartobject.png",
+        "assets 2/scene2/layer_68_smartobject.png",
+        "assets 3/scene1/layer_42_smartobject.png"
+      ]
+    },
+    {
+      "id": "asset_0032",
+      "file": "assets/scene1/layer_8_copy_3_smartobject.png",
+      "name": "layer_8_copy_3_smartobject",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 326472,
+      "sha1": "6f285f63ea4322e847241ae03d6b0783f9ccb37f",
+      "duplicates": [
+        "assets/scene1/layer_8_copy_3_smartobject.png",
+        "assets 2/scene1/layer_8_copy_3_smartobject.png",
+        "assets 3/scene1/layer_8_copy_3_smartobject.png"
+      ]
+    },
+    {
+      "id": "asset_0033",
+      "file": "assets/scene2/приходи_smartobject.png",
+      "name": "приходи_smartobject",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 303737,
+      "sha1": "80e3432409bb17d3df7bdff8f088087bd0f80f60",
+      "duplicates": [
+        "assets/scene2/приходи_smartobject.png",
+        "assets 2/scene2/приходи_smartobject.png",
+        "assets 3/scene2/приходи_smartobject.png"
+      ]
+    },
+    {
+      "id": "asset_0034",
+      "file": "assets/scene2/layer_12_copy_4_pixel.png",
+      "name": "layer_12_copy_4_pixel",
+      "ext": "png",
+      "kind": "line",
+      "sourceRoot": "assets",
+      "bytes": 32738,
+      "sha1": "e13a12305a3793f4b7598b734a154a1a83058340",
+      "duplicates": [
+        "assets/scene2/layer_12_copy_4_pixel.png",
+        "assets 2/scene2/layer_12_copy_4_pixel.png",
+        "assets 3/scene2/layer_12_copy_4_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0035",
+      "file": "assets/scene2/layer_12_copy_5_pixel.png",
+      "name": "layer_12_copy_5_pixel",
+      "ext": "png",
+      "kind": "line",
+      "sourceRoot": "assets",
+      "bytes": 36196,
+      "sha1": "49cca170442cd4c5cdccee7dd1961cbe09b5216d",
+      "duplicates": [
+        "assets/scene2/layer_12_copy_5_pixel.png",
+        "assets 2/scene2/layer_12_copy_5_pixel.png",
+        "assets 3/scene2/layer_12_copy_5_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0036",
+      "file": "assets/scene2/layer_46_pixel.png",
+      "name": "layer_46_pixel",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 53329,
+      "sha1": "963f3c525c115c99293104fc4ee7d8ab3569337a",
+      "duplicates": [
+        "assets/scene2/layer_46_pixel.png",
+        "assets 2/scene2/layer_46_pixel.png",
+        "assets 3/scene2/layer_46_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0037",
+      "file": "assets/scene2/layer_48_pixel.png",
+      "name": "layer_48_pixel",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 4361,
+      "sha1": "f5ece392e61edbd6725f583f8a9c979d4980c774",
+      "duplicates": [
+        "assets/scene2/layer_48_pixel.png",
+        "assets 2/scene2/layer_48_pixel.png",
+        "assets 3/scene2/layer_48_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0038",
+      "file": "assets/scene2/layer_49_smartobject.png",
+      "name": "layer_49_smartobject",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 24788,
+      "sha1": "0e2849007d891f495e380a7c15071fe9d3af172c",
+      "duplicates": [
+        "assets/scene2/layer_49_smartobject.png",
+        "assets 2/scene2/layer_49_smartobject.png",
+        "assets 3/scene2/layer_49_smartobject.png"
+      ]
+    },
+    {
+      "id": "asset_0039",
+      "file": "assets/scene2/layer_50_pixel.png",
+      "name": "layer_50_pixel",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 1839,
+      "sha1": "03c807c4f569268bab8c1f52dac44a5e0113310b",
+      "duplicates": [
+        "assets/scene2/layer_50_pixel.png",
+        "assets 2/scene2/layer_50_pixel.png",
+        "assets 3/scene2/layer_50_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0040",
+      "file": "assets/scene2/layer_58_copy_pixel.png",
+      "name": "layer_58_copy_pixel",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 1714,
+      "sha1": "6a5a0bc9d1d42dae400809b726b050808a80535a",
+      "duplicates": [
+        "assets/scene2/layer_58_copy_pixel.png",
+        "assets 2/scene2/layer_58_copy_pixel.png",
+        "assets 3/scene2/layer_58_copy_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0041",
+      "file": "assets/scene2/layer_58_pixel.png",
+      "name": "layer_58_pixel",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 1332,
+      "sha1": "2a83b7b3070f7088ca1423a78ffecd417ed33d71",
+      "duplicates": [
+        "assets/scene2/layer_58_pixel.png",
+        "assets 2/scene2/layer_58_pixel.png",
+        "assets 3/scene2/layer_58_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0042",
+      "file": "assets/scene2/layer_9_copy_2_smartobject.png",
+      "name": "layer_9_copy_2_smartobject",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 146159,
+      "sha1": "12af1b1babcf38caca2cca9493367196235752c6",
+      "duplicates": [
+        "assets/scene2/layer_9_copy_2_smartobject.png",
+        "assets 2/scene2/layer_9_copy_2_smartobject.png",
+        "assets 3/scene2/layer_9_copy_2_smartobject.png"
+      ]
+    },
+    {
+      "id": "asset_0043",
+      "file": "assets/scene2/rectangle_4_shape.png",
+      "name": "rectangle_4_shape",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 172573,
+      "sha1": "51e87754aae9b6f4ea9484a3e2dd2955c109d7ab",
+      "duplicates": [
+        "assets/scene2/rectangle_4_shape.png",
+        "assets 2/scene2/rectangle_4_shape.png",
+        "assets 3/scene2/rectangle_4_shape.png"
+      ]
+    },
+    {
+      "id": "asset_0044",
+      "file": "assets/scene3/girl_extracted.png",
+      "name": "girl_extracted",
+      "ext": "png",
+      "kind": "photo",
+      "sourceRoot": "assets",
+      "bytes": 303453,
+      "sha1": "c53e8fa6b7abc7de6bfca17a77b5558ee63e02db",
+      "duplicates": [
+        "assets/scene3/girl_extracted.png",
+        "assets 2/scene3/girl_extracted.png"
+      ]
+    },
+    {
+      "id": "asset_0045",
+      "file": "assets/scene3/layer_12_copy_pixel.png",
+      "name": "layer_12_copy_pixel",
+      "ext": "png",
+      "kind": "line",
+      "sourceRoot": "assets",
+      "bytes": 31908,
+      "sha1": "2dda3bac3f2940cb0f419aec7fb59af9aec38b58",
+      "duplicates": [
+        "assets/scene3/layer_12_copy_pixel.png",
+        "assets 2/scene3/layer_12_copy_pixel.png",
+        "assets 3/scene3/layer_12_copy_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0046",
+      "file": "assets/scene3/layer_12_pixel.png",
+      "name": "layer_12_pixel",
+      "ext": "png",
+      "kind": "line",
+      "sourceRoot": "assets",
+      "bytes": 29745,
+      "sha1": "772b54a9e9dab074aa0944e476db3dc6e5db2ac6",
+      "duplicates": [
+        "assets/scene3/layer_12_pixel.png",
+        "assets 2/scene3/layer_12_pixel.png",
+        "assets 3/scene3/layer_12_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0047",
+      "file": "assets/scene3/layer_21_copy_smartobject.png",
+      "name": "layer_21_copy_smartobject",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 977043,
+      "sha1": "17eb5e67113f6f0fcb66c7600470fc3c5455255c",
+      "duplicates": [
+        "assets/scene3/layer_21_copy_smartobject.png",
+        "assets 2/scene3/layer_21_copy_smartobject.png",
+        "assets 3/scene3/layer_21_copy_smartobject.png"
+      ]
+    },
+    {
+      "id": "asset_0048",
+      "file": "assets/scene3/layer_24_copy_smartobject.png",
+      "name": "layer_24_copy_smartobject",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 1049,
+      "sha1": "9248cb9535a659adf98b94fa3d91997e08598b4a",
+      "duplicates": [
+        "assets/scene3/layer_24_copy_smartobject.png",
+        "assets 2/scene3/layer_24_copy_smartobject.png",
+        "assets 3/scene3/layer_24_copy_smartobject.png"
+      ]
+    },
+    {
+      "id": "asset_0049",
+      "file": "assets/scene3/layer_25_copy_2_smartobject.png",
+      "name": "layer_25_copy_2_smartobject",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 1531,
+      "sha1": "f2a29c416bf181e98dab76500522d5f3a62cbf91",
+      "duplicates": [
+        "assets/scene3/layer_25_copy_2_smartobject.png",
+        "assets 2/scene3/layer_25_copy_2_smartobject.png",
+        "assets 3/scene3/layer_25_copy_2_smartobject.png"
+      ]
+    },
+    {
+      "id": "asset_0050",
+      "file": "assets/scene3/layer_25_copy_3_smartobject.png",
+      "name": "layer_25_copy_3_smartobject",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 1215,
+      "sha1": "d261b73afa63b292a474b65b80a753b4b01d792a",
+      "duplicates": [
+        "assets/scene3/layer_25_copy_3_smartobject.png",
+        "assets 2/scene3/layer_25_copy_3_smartobject.png",
+        "assets 3/scene3/layer_25_copy_3_smartobject.png"
+      ]
+    },
+    {
+      "id": "asset_0051",
+      "file": "assets/scene3/layer_25_copy_7_smartobject.png",
+      "name": "layer_25_copy_7_smartobject",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 1689,
+      "sha1": "eefae1ed0b783c23189614a15ff7582a603f5449",
+      "duplicates": [
+        "assets/scene3/layer_25_copy_7_smartobject.png",
+        "assets 2/scene3/layer_25_copy_7_smartobject.png",
+        "assets 3/scene3/layer_25_copy_7_smartobject.png"
+      ]
+    },
+    {
+      "id": "asset_0052",
+      "file": "assets/scene3/layer_25_smartobject.png",
+      "name": "layer_25_smartobject",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 922,
+      "sha1": "05e726f40bdf00c626a9d1190e73f2f228ddffbd",
+      "duplicates": [
+        "assets/scene3/layer_25_smartobject.png",
+        "assets 2/scene3/layer_25_smartobject.png",
+        "assets 3/scene3/layer_25_smartobject.png"
+      ]
+    },
+    {
+      "id": "asset_0053",
+      "file": "assets/scene3/layer_26_copy_smartobject.png",
+      "name": "layer_26_copy_smartobject",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 1402,
+      "sha1": "b62e2bcef328521750bc17f42df67ce3f8101ea5",
+      "duplicates": [
+        "assets/scene3/layer_26_copy_smartobject.png",
+        "assets 2/scene3/layer_26_copy_smartobject.png",
+        "assets 3/scene3/layer_26_copy_smartobject.png"
+      ]
+    },
+    {
+      "id": "asset_0054",
+      "file": "assets/scene3/layer_27_pixel.png",
+      "name": "layer_27_pixel",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 4052,
+      "sha1": "b79d8a01229c8dd287f0fe448e1938ef5e484d4a",
+      "duplicates": [
+        "assets/scene3/layer_27_pixel.png",
+        "assets 2/scene3/layer_27_pixel.png",
+        "assets 3/scene3/layer_27_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0055",
+      "file": "assets/scene3/layer_28_pixel.png",
+      "name": "layer_28_pixel",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 12404,
+      "sha1": "e962bc222db0b4a88a613cce2a6cf5d0c8f2ef4b",
+      "duplicates": [
+        "assets/scene3/layer_28_pixel.png",
+        "assets 2/scene3/layer_28_pixel.png",
+        "assets 3/scene3/layer_28_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0056",
+      "file": "assets/scene3/layer_29_pixel.png",
+      "name": "layer_29_pixel",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 4383,
+      "sha1": "7289ad6926a6c8d433dc35c1e8c96cbb80d18504",
+      "duplicates": [
+        "assets/scene3/layer_29_pixel.png",
+        "assets 2/scene3/layer_29_pixel.png",
+        "assets 3/scene3/layer_29_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0057",
+      "file": "assets/scene3/layer_30_pixel.png",
+      "name": "layer_30_pixel",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 1204169,
+      "sha1": "37cb1bc43490f0f2c13b5a9725eca0329491a7ef",
+      "duplicates": [
+        "assets/scene3/layer_30_pixel.png",
+        "assets 2/scene3/layer_30_pixel.png",
+        "assets 3/scene3/layer_30_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0058",
+      "file": "assets/scene3/layer_37_copy_pixel.png",
+      "name": "layer_37_copy_pixel",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 50855,
+      "sha1": "f7938fef63b9055927b7dd738feaeaf109545345",
+      "duplicates": [
+        "assets/scene3/layer_37_copy_pixel.png",
+        "assets 2/scene3/layer_37_copy_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0059",
+      "file": "assets/scene4/layer_12_copy_6_pixel.png",
+      "name": "layer_12_copy_6_pixel",
+      "ext": "png",
+      "kind": "line",
+      "sourceRoot": "assets",
+      "bytes": 33453,
+      "sha1": "dddeb8107bc3d32f58ad348439b26d5e9655fc4a",
+      "duplicates": [
+        "assets/scene4/layer_12_copy_6_pixel.png",
+        "assets 2/scene4/layer_12_copy_6_pixel.png",
+        "assets 3/scene4/layer_12_copy_6_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0060",
+      "file": "assets/scene4/layer_12_copy_7_pixel.png",
+      "name": "layer_12_copy_7_pixel",
+      "ext": "png",
+      "kind": "line",
+      "sourceRoot": "assets",
+      "bytes": 32109,
+      "sha1": "22c02b94861ab072c1d666eb29978483b150d682",
+      "duplicates": [
+        "assets/scene4/layer_12_copy_7_pixel.png",
+        "assets 2/scene4/layer_12_copy_7_pixel.png",
+        "assets 3/scene4/layer_12_copy_7_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0061",
+      "file": "assets/scene4/layer_21_copy_3_smartobject.png",
+      "name": "layer_21_copy_3_smartobject",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 518307,
+      "sha1": "cc144bf97442767a41a20950d8487c1eb4f8ce01",
+      "duplicates": [
+        "assets/scene4/layer_21_copy_3_smartobject.png",
+        "assets 2/scene4/layer_21_copy_3_smartobject.png",
+        "assets 3/scene4/layer_21_copy_3_smartobject.png"
+      ]
+    },
+    {
+      "id": "asset_0062",
+      "file": "assets/scene4/layer_24_copy_4_smartobject.png",
+      "name": "layer_24_copy_4_smartobject",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 1055,
+      "sha1": "86540e22fb0838d48869da885cbd9e0cc853e03b",
+      "duplicates": [
+        "assets/scene4/layer_24_copy_4_smartobject.png",
+        "assets 2/scene4/layer_24_copy_4_smartobject.png",
+        "assets 3/scene4/layer_24_copy_4_smartobject.png"
+      ]
+    },
+    {
+      "id": "asset_0063",
+      "file": "assets/scene4/layer_25_copy_5_smartobject.png",
+      "name": "layer_25_copy_5_smartobject",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 1208,
+      "sha1": "17c21496d0e2c646a2d671934eaf2e3b7f898930",
+      "duplicates": [
+        "assets/scene4/layer_25_copy_5_smartobject.png",
+        "assets 2/scene4/layer_25_copy_5_smartobject.png",
+        "assets 3/scene4/layer_25_copy_5_smartobject.png"
+      ]
+    },
+    {
+      "id": "asset_0064",
+      "file": "assets/scene4/layer_51_pixel.png",
+      "name": "layer_51_pixel",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 1204343,
+      "sha1": "9d5ccfa235b2795e6b538e476abc9011096ab4eb",
+      "duplicates": [
+        "assets/scene4/layer_51_pixel.png",
+        "assets 2/scene4/layer_51_pixel.png",
+        "assets 3/scene4/layer_51_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0065",
+      "file": "assets/scene4/layer_52_pixel.png",
+      "name": "layer_52_pixel",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 724,
+      "sha1": "7c09477ed50ad77f8f8b69c4c27f9e90ea7290a3",
+      "duplicates": [
+        "assets/scene4/layer_52_pixel.png",
+        "assets 2/scene4/layer_52_pixel.png",
+        "assets 3/scene4/layer_52_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0066",
+      "file": "assets/scene4/layer_53_pixel.png",
+      "name": "layer_53_pixel",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 2714,
+      "sha1": "b953f74a52367bef5db47ca6198aee9d216673e9",
+      "duplicates": [
+        "assets/scene4/layer_53_pixel.png",
+        "assets 2/scene4/layer_53_pixel.png",
+        "assets 3/scene4/layer_53_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0067",
+      "file": "assets/scene4/layer_54_pixel.png",
+      "name": "layer_54_pixel",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 7016,
+      "sha1": "6922e27595e9e6d03e4c3bf2cd04ce71626bfa79",
+      "duplicates": [
+        "assets/scene4/layer_54_pixel.png",
+        "assets 2/scene4/layer_54_pixel.png",
+        "assets 3/scene4/layer_54_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0068",
+      "file": "assets/scene4/layer_55_pixel.png",
+      "name": "layer_55_pixel",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 2425,
+      "sha1": "63ec22edbb2a91404a411c46c6f935d329bbb2b7",
+      "duplicates": [
+        "assets/scene4/layer_55_pixel.png",
+        "assets 2/scene4/layer_55_pixel.png",
+        "assets 3/scene4/layer_55_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0069",
+      "file": "assets/scene4/layer_56_pixel.png",
+      "name": "layer_56_pixel",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 3608,
+      "sha1": "d5f1b7600666cc1ff2ead81fae72e03a4bf5b821",
+      "duplicates": [
+        "assets/scene4/layer_56_pixel.png",
+        "assets 2/scene4/layer_56_pixel.png",
+        "assets 3/scene4/layer_56_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0070",
+      "file": "assets/scene4/layer_57_pixel.png",
+      "name": "layer_57_pixel",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 10363,
+      "sha1": "be93b2c935691ee16e11651dab411848bb84c7c4",
+      "duplicates": [
+        "assets/scene4/layer_57_pixel.png",
+        "assets 2/scene4/layer_57_pixel.png",
+        "assets 3/scene4/layer_57_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0071",
+      "file": "assets/scene4/layer_77_pixel.png",
+      "name": "layer_77_pixel",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 2691,
+      "sha1": "b32a19079b7dec67fa5ea3fa22a47c105930b9df",
+      "duplicates": [
+        "assets/scene4/layer_77_pixel.png",
+        "assets 2/scene4/layer_77_pixel.png",
+        "assets 3/scene4/layer_77_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0072",
+      "file": "assets/scene4/layer_8_copy_4_smartobject.png",
+      "name": "layer_8_copy_4_smartobject",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 301283,
+      "sha1": "fcbc78a9965b57f0533f309f1c3adf8555fc4a34",
+      "duplicates": [
+        "assets/scene4/layer_8_copy_4_smartobject.png",
+        "assets 2/scene4/layer_8_copy_4_smartobject.png",
+        "assets 3/scene4/layer_8_copy_4_smartobject.png"
+      ]
+    },
+    {
+      "id": "asset_0073",
+      "file": "assets/scene5/layer_32_copy_pixel.png",
+      "name": "layer_32_copy_pixel",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 64445,
+      "sha1": "f9a933efa990eb04ec72c3588608e7114a4b11b1",
+      "duplicates": [
+        "assets/scene5/layer_32_copy_pixel.png",
+        "assets 2/scene5/layer_32_copy_pixel.png",
+        "assets 3/scene5/layer_32_copy_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0074",
+      "file": "assets/scene5/layer_32_pixel.png",
+      "name": "layer_32_pixel",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 47236,
+      "sha1": "19f28ed58f11729a707653ba7813df69387fe9ed",
+      "duplicates": [
+        "assets/scene5/layer_32_pixel.png",
+        "assets 2/scene5/layer_32_pixel.png",
+        "assets 3/scene5/layer_32_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0075",
+      "file": "assets/scene5/layer_45_pixel.png",
+      "name": "layer_45_pixel",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 23290,
+      "sha1": "9aefa59558cef6b9edfa550b0f4d3c657721cb12",
+      "duplicates": [
+        "assets/scene5/layer_45_pixel.png",
+        "assets 2/scene5/layer_45_pixel.png",
+        "assets 3/scene5/layer_45_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0076",
+      "file": "assets/scene5/layer_63_pixel.png",
+      "name": "layer_63_pixel",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 2307,
+      "sha1": "aa5e25a13f141d7fbc7ad5e7ffc908f3990f709a",
+      "duplicates": [
+        "assets/scene5/layer_63_pixel.png",
+        "assets 2/scene5/layer_63_pixel.png",
+        "assets 3/scene5/layer_63_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0077",
+      "file": "assets/scene5/layer_64_pixel.png",
+      "name": "layer_64_pixel",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 1900,
+      "sha1": "5deeef06c42cf51378903333fd8ea8960ba55864",
+      "duplicates": [
+        "assets/scene5/layer_64_pixel.png",
+        "assets 2/scene5/layer_64_pixel.png",
+        "assets 3/scene5/layer_64_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0078",
+      "file": "assets/scene5/layer_65_pixel.png",
+      "name": "layer_65_pixel",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 2178,
+      "sha1": "461b38d4c58f74dc110192b8824cc930b3a7df66",
+      "duplicates": [
+        "assets/scene5/layer_65_pixel.png",
+        "assets 2/scene5/layer_65_pixel.png",
+        "assets 3/scene5/layer_65_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0079",
+      "file": "assets/scene5/layer_66_pixel.png",
+      "name": "layer_66_pixel",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 1434,
+      "sha1": "4764aacabbf0e0b1e0d758965a1efa984858b92a",
+      "duplicates": [
+        "assets/scene5/layer_66_pixel.png",
+        "assets 2/scene5/layer_66_pixel.png",
+        "assets 3/scene5/layer_66_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0080",
+      "file": "assets/scene5/layer_67_pixel.png",
+      "name": "layer_67_pixel",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 3232,
+      "sha1": "b4ac30d4931fb6c1473759c92c67b963ee881090",
+      "duplicates": [
+        "assets/scene5/layer_67_pixel.png",
+        "assets 2/scene5/layer_67_pixel.png",
+        "assets 3/scene5/layer_67_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0081",
+      "file": "assets/scene5/layer_73_pixel.png",
+      "name": "layer_73_pixel",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 6719,
+      "sha1": "76c004c512f7c1b6781a01e4b685df510a5ffdc4",
+      "duplicates": [
+        "assets/scene5/layer_73_pixel.png",
+        "assets 2/scene5/layer_73_pixel.png",
+        "assets 3/scene5/layer_73_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0082",
+      "file": "assets/scene5/layer_74_pixel.png",
+      "name": "layer_74_pixel",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 821,
+      "sha1": "1902ad86b88fc8f3adc49af78666fa6ec01b5101",
+      "duplicates": [
+        "assets/scene5/layer_74_pixel.png",
+        "assets 2/scene5/layer_74_pixel.png",
+        "assets 3/scene5/layer_74_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0083",
+      "file": "assets/scene5/layer_75_pixel.png",
+      "name": "layer_75_pixel",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 12849,
+      "sha1": "78f3871b5a760c695efa359b1cae31f3b4a409e7",
+      "duplicates": [
+        "assets/scene5/layer_75_pixel.png",
+        "assets 2/scene5/layer_75_pixel.png",
+        "assets 3/scene5/layer_75_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0084",
+      "file": "assets/scene5/layer_9_copy_pixel.png",
+      "name": "layer_9_copy_pixel",
+      "ext": "png",
+      "kind": "graphic",
+      "sourceRoot": "assets",
+      "bytes": 105938,
+      "sha1": "05c2f3d8f5607d509a3219684c259bd303e6c98c",
+      "duplicates": [
+        "assets/scene5/layer_9_copy_pixel.png",
+        "assets 2/scene5/layer_9_copy_pixel.png",
+        "assets 3/scene5/layer_9_copy_pixel.png"
+      ]
+    },
+    {
+      "id": "asset_0085",
+      "file": "assets/video/IMG_2240.MP4",
+      "name": "IMG_2240",
+      "ext": "mp4",
+      "kind": "video",
+      "sourceRoot": "assets",
+      "bytes": 6462910,
+      "sha1": "91846c26e9be7ccca1953974455b819adf28b150",
+      "duplicates": [
+        "assets/video/IMG_2240.MP4"
+      ]
+    },
+    {
+      "id": "asset_0086",
+      "file": "assets/video/IMG_2241_faststart.MP4",
+      "name": "IMG_2241_faststart",
+      "ext": "mp4",
+      "kind": "video",
+      "sourceRoot": "assets",
+      "bytes": 6169364,
+      "sha1": "9674a131edb9cb33fb5443f09f14297b050c15d6",
+      "duplicates": [
+        "assets/video/IMG_2241_faststart.MP4"
+      ]
+    },
+    {
+      "id": "asset_0087",
+      "file": "assets/video/IMG_2241.MP4",
+      "name": "IMG_2241",
+      "ext": "mp4",
+      "kind": "video",
+      "sourceRoot": "assets",
+      "bytes": 6169356,
+      "sha1": "5eba24768370fe4dbc1766a83de50518b86a5ce7",
+      "duplicates": [
+        "assets/video/IMG_2241.MP4"
+      ]
+    }
+  ]
+}

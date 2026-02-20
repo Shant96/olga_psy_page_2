@@ -1,0 +1,1462 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Сайт психолога</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+
+    :root {
+      --bg: #ece7de;
+      --ink: #161616;
+      --muted: #535353;
+      --line: rgba(22, 22, 22, 0.18);
+      --soft: rgba(255, 255, 255, 0.55);
+      --nav-h: 72px;
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      color: var(--ink);
+      font-family: 'Manrope', 'Segoe UI', Arial, sans-serif;
+      background:
+        radial-gradient(1200px 700px at 12% -10%, rgba(255,255,255,0.55), rgba(255,255,255,0)),
+        radial-gradient(900px 500px at 88% 10%, rgba(255,255,255,0.32), rgba(255,255,255,0)),
+        var(--bg);
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; }
+
+    /* ===== NAV (desktop pill + indicator) ===== */
+    .top-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--nav-h);
+      z-index: 200;
+      display: grid;
+      place-items: center;
+      border-bottom: 1px solid var(--line);
+      background: rgba(236, 231, 222, 0.82);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-inner {
+      width: min(1260px, calc(100% - 18px));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      position: relative;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 8px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.28);
+      border-radius: 999px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      line-height: 1;
+      white-space: nowrap;
+      position: relative;
+      z-index: 2;
+      user-select: none;
+    }
+
+    .menu a:focus-visible {
+      outline: 2px solid rgba(22,22,22,0.55);
+      outline-offset: 2px;
+    }
+
+    .nav-indicator {
+      position: absolute;
+      top: 8px;
+      bottom: 8px;
+      left: 8px;
+      width: 120px;
+      border-radius: 999px;
+      background: rgba(22,22,22,0.88);
+      z-index: 1;
+      transform: translate3d(0,0,0);
+      transition: transform 0.55s cubic-bezier(.16,1,.3,1), width 0.55s cubic-bezier(.16,1,.3,1);
+      will-change: transform, width;
+    }
+
+    .menu a.is-active { color: #fff; }
+
+    /* burger */
+    .burger {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.32);
+      padding: 0;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .burger-lines {
+      width: 18px;
+      height: 12px;
+      position: relative;
+    }
+
+    .burger-lines span {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: rgba(22,22,22,0.88);
+      transform-origin: center;
+      transition: transform 0.45s cubic-bezier(.16,1,.3,1), top 0.45s cubic-bezier(.16,1,.3,1), opacity 0.25s ease;
+    }
+
+    .burger-lines span:nth-child(1) { top: 0; }
+    .burger-lines span:nth-child(2) { top: 5px; }
+    .burger-lines span:nth-child(3) { top: 10px; }
+
+    .burger[aria-expanded="true"] .burger-lines span:nth-child(1) { top: 5px; transform: rotate(45deg); }
+    .burger[aria-expanded="true"] .burger-lines span:nth-child(2) { opacity: 0; }
+    .burger[aria-expanded="true"] .burger-lines span:nth-child(3) { top: 5px; transform: rotate(-45deg); }
+
+    /* mobile overlay */
+    .drawer {
+      position: fixed;
+      inset: 0;
+      z-index: 250;
+      pointer-events: none;
+    }
+
+    .drawer-scrim {
+      position: absolute;
+      inset: 0;
+      background: rgba(18,18,18,0.28);
+      opacity: 0;
+    }
+
+    .drawer-panel {
+      position: absolute;
+      top: calc(var(--nav-h) + 6px);
+      right: 12px;
+      width: min(92vw, 420px);
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.22);
+      background: rgba(22,22,22,0.92);
+      padding: 18px;
+      transform: translate3d(0,-10px,0) scale(0.98);
+      opacity: 0;
+      clip-path: circle(0px at calc(100% - 36px) 18px);
+      -webkit-clip-path: circle(0px at calc(100% - 36px) 18px);
+    }
+
+    .drawer-panel a {
+      display: block;
+      text-decoration: none;
+      color: rgba(255,255,255,0.92);
+      font-weight: 800;
+      font-size: 18px;
+      padding: 14px 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06);
+      margin-top: 10px;
+    }
+
+    .drawer-panel a:active { transform: scale(0.99); }
+
+    .drawer.is-open { pointer-events: auto; }
+
+    /* ===== LAYOUT ===== */
+    main { padding-top: var(--nav-h); }
+
+    section { width: 100%; }
+
+    .scroll-section {
+      position: relative;
+      scroll-margin-top: calc(var(--nav-h) + 10px);
+    }
+
+    .stage {
+      position: sticky;
+      top: var(--nav-h);
+      height: calc(100svh - var(--nav-h));
+      height: calc(100vh - var(--nav-h));
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      padding: clamp(18px, 3vw, 52px);
+    }
+
+    .container {
+      width: min(1280px, 100%);
+    }
+
+    /* ===== VIDEO ===== */
+    .video-scroll { height: 400vh; }
+
+    .video-frame {
+      width: 100vw;
+      max-width: 100vw;
+      aspect-ratio: 1920 / 1072;
+      display: grid;
+      place-items: center;
+    }
+
+    .video-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      user-select: none;
+      pointer-events: none;
+      -webkit-user-drag: none;
+      background: transparent;
+    }
+
+    /* ===== THOUGHTS ===== */
+    .thoughts-scroll { height: 400vh; }
+
+    .kicker {
+      margin: 0 0 10px;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .bigline {
+      margin: 0;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(40px, 7.4vw, 118px);
+      line-height: 0.95;
+      letter-spacing: -0.012em;
+      text-wrap: balance;
+    }
+
+    .subline {
+      margin: 18px 0 0;
+      font-size: clamp(17px, 1.55vw, 24px);
+      line-height: 1.45;
+      color: #2e2e2e;
+      max-width: 48ch;
+      text-wrap: pretty;
+    }
+
+    .char { display: inline-block; will-change: transform, opacity; }
+
+    /* ===== STORY (image + text, kinetic transitions) ===== */
+    .story-scroll { height: 1000vh; } /* JS will set exact height = (slides*3+1)*100vh */
+
+    .story-stack {
+      position: relative;
+      width: min(1280px, 100%);
+      height: 100%;
+      border-radius: 30px;
+      border: 1px solid rgba(22,22,22,0.10);
+      background: rgba(255,255,255,0.18);
+      overflow: hidden;
+    }
+
+    .story-slide {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: 1.18fr 0.82fr;
+      gap: clamp(16px, 2vw, 32px);
+      padding: clamp(18px, 3vw, 42px);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .story-slide.is-active { opacity: 1; pointer-events: auto; }
+
+    .story-slide:nth-child(even) { grid-template-columns: 0.82fr 1.18fr; }
+    .story-slide:nth-child(even) .story-media { order: 2; }
+    .story-slide:nth-child(even) .story-copy { order: 1; }
+
+    .story-slide::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(800px 300px at 15% 10%, rgba(255,255,255,0.22), rgba(255,255,255,0)),
+        radial-gradient(600px 260px at 85% 80%, rgba(22,22,22,0.05), rgba(22,22,22,0));
+      opacity: 0.8;
+    }
+
+
+    .story-media {
+      border-radius: 26px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(0,0,0,0.08);
+      background: rgba(0,0,0,0.02);
+      clip-path: inset(0 0 0 0 round 26px);
+      -webkit-clip-path: inset(0 0 0 0 round 26px);
+      will-change: clip-path;
+    }
+
+    .story-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transform: scale(1.03);
+      will-change: transform;
+    }
+
+    .story-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: clamp(6px, 1vw, 12px) 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .story-title {
+      margin: 0;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(34px, 4.4vw, 74px);
+      line-height: 0.98;
+      letter-spacing: -0.012em;
+      text-wrap: balance;
+    }
+
+    .story-text {
+      margin: 14px 0 0;
+      font-size: clamp(16px, 1.25vw, 20px);
+      line-height: 1.55;
+      color: #2b2b2b;
+      max-width: 46ch;
+    }
+
+    .story-list {
+      margin: 14px 0 0;
+      padding-left: 18px;
+      color: #2b2b2b;
+      font-size: clamp(15px, 1.1vw, 18px);
+      line-height: 1.5;
+      max-width: 48ch;
+    }
+
+    .story-kicker {
+      margin: 0 0 10px;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(22,22,22,0.6);
+      font-weight: 800;
+    }
+
+    .story-copy .line-mask { overflow: hidden; display: block; }
+    .story-copy .line-mask > * { will-change: transform, opacity; }
+
+    .story-ghost {
+      position: absolute;
+      right: 0;
+      top: -0.05em;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(60px, 9vw, 160px);
+      line-height: 0.8;
+      color: rgba(22,22,22,0.04);
+      letter-spacing: -0.03em;
+      pointer-events: none;
+      user-select: none;
+      white-space: nowrap;
+      transform: translate3d(8%,0,0);
+    }
+
+
+    /* ===== ABOUT (no photo) ===== */
+    .about {
+      min-height: calc(100svh - var(--nav-h));
+      min-height: calc(100vh - var(--nav-h));
+      display: grid;
+      place-items: center;
+      padding: clamp(18px, 3vw, 56px);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(14px, 2vw, 22px);
+      margin-top: 22px;
+    }
+
+    .about-kinetic {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid rgba(22,22,22,0.10);
+      background: rgba(255,255,255,0.18);
+      padding: 12px;
+    }
+    .about-row {
+      display: flex;
+      gap: 10px;
+      white-space: nowrap;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      color: rgba(22,22,22,0.72);
+      will-change: transform;
+    }
+    .about-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(22,22,22,0.12);
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: rgba(255,255,255,0.28);
+    }
+
+
+    .about-card {
+      border: 1px solid rgba(22,22,22,0.12);
+      border-radius: 22px;
+      background: rgba(255,255,255,0.24);
+      padding: 18px 18px;
+    }
+
+    .about-card h3 {
+      margin: 0;
+      font-size: 14px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(22,22,22,0.70);
+    }
+
+    .about-card p {
+      margin: 10px 0 0;
+      font-size: clamp(16px, 1.25vw, 20px);
+      line-height: 1.55;
+      color: #2b2b2b;
+      max-width: 62ch;
+    }
+
+    .about-sigil {
+      margin-top: 18px;
+      width: min(720px, 100%);
+      height: 80px;
+      opacity: 0.9;
+    }
+
+    .about-sigil path {
+      fill: none;
+      stroke: rgba(22,22,22,0.55);
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ===== FAQ (sticky + scroll-driven accordion) ===== */
+    .faq-scroll { height: 400vh; }
+
+    .faq-panel {
+      width: min(1080px, 100%);
+      border-radius: 30px;
+      border: 1px solid rgba(22,22,22,0.10);
+      background: rgba(255,255,255,0.20);
+      padding: clamp(16px, 2.4vw, 28px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .faq-bg {
+      position: absolute;
+      inset: -20%;
+      background: radial-gradient(closest-side at 30% 30%, rgba(22,22,22,0.08), rgba(22,22,22,0)),
+                  radial-gradient(closest-side at 70% 70%, rgba(255,255,255,0.25), rgba(255,255,255,0));
+      transform: translate3d(0,0,0);
+      will-change: transform;
+      pointer-events: none;
+    }
+
+    .faq-inner { position: relative; z-index: 2; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(16px,2.4vw,24px); align-items: start; }
+
+    .faq-side { position: sticky; top: 0; }
+
+    .faq-progress { margin-top: 16px; height: 6px; border-radius: 999px; background: rgba(22,22,22,0.08); overflow: hidden; }
+    .faq-progress-bar { height: 100%; width: 0%; background: linear-gradient(90deg, rgba(22,22,22,0.85), rgba(22,22,22,0.45)); border-radius: inherit; }
+
+    .faq-title {
+      margin: 0;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(38px, 6vw, 92px);
+      line-height: 0.95;
+      letter-spacing: -0.012em;
+    }
+
+    .faq-items {
+      margin-top: 18px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .faq-item {
+      border: 1px solid rgba(22,22,22,0.12);
+      border-radius: 20px;
+      background: rgba(255,255,255,0.24);
+      padding: 14px 14px;
+      cursor: pointer;
+      user-select: none;
+      transform-origin: 50% 50%;
+      will-change: transform, opacity, background;
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+    .faq-item[data-active="1"] { background: rgba(255,255,255,0.44); border-color: rgba(22,22,22,0.2); }
+
+    .faq-q {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-weight: 800;
+      font-size: clamp(16px, 1.2vw, 18px);
+    }
+
+    .faq-q span:last-child {
+      width: 28px;
+      height: 28px;
+      border-radius: 10px;
+      border: 1px solid rgba(22,22,22,0.14);
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,0.22);
+      flex: 0 0 auto;
+      transition: transform 0.25s ease;
+    }
+
+    .faq-item[data-active="1"] .faq-q span:last-child { transform: rotate(45deg); }
+
+    .faq-a {
+      height: 0;
+      overflow: hidden;
+      color: rgba(22,22,22,0.72);
+      font-size: clamp(15px, 1.06vw, 17px);
+      line-height: 1.5;
+      padding-right: 12px;
+    }
+
+    .faq-a p { margin: 12px 0 0; }
+
+    /* ===== CONTACTS ===== */
+    .contacts {
+      min-height: calc(100svh - var(--nav-h));
+      min-height: calc(100vh - var(--nav-h));
+      display: grid;
+      place-items: center;
+      padding: clamp(18px, 3vw, 56px);
+    }
+
+    .cta {
+      width: min(1080px, 100%);
+      border-radius: 30px;
+      border: 1px solid rgba(22,22,22,0.10);
+      background: rgba(255,255,255,0.22);
+      padding: clamp(18px, 3vw, 34px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: "";
+      position: absolute;
+      inset: -30%;
+      background: radial-gradient(closest-side at 30% 40%, rgba(22,22,22,0.08), rgba(22,22,22,0)),
+                  radial-gradient(closest-side at 75% 55%, rgba(255,255,255,0.26), rgba(255,255,255,0));
+      transform: translate3d(0,0,0);
+      pointer-events: none;
+    }
+
+    .cta-inner { position: relative; z-index: 2; }
+    .cta-grid { display:grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(16px,2.6vw,26px); align-items: end; }
+    .cta-card { border:1px solid rgba(22,22,22,0.12); background: rgba(255,255,255,0.28); border-radius: 22px; padding: 14px; }
+    .cta-card h3 { margin:0; font-size:13px; letter-spacing:.12em; text-transform:uppercase; color: rgba(22,22,22,.62); }
+    .cta-card p { margin:10px 0 0; font-size:15px; line-height:1.45; color: rgba(22,22,22,.76); }
+
+    .cta-title {
+      margin: 0;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(40px, 7vw, 110px);
+      line-height: 0.94;
+      letter-spacing: -0.012em;
+      text-wrap: balance;
+    }
+
+    .cta-text {
+      margin: 16px 0 0;
+      font-size: clamp(16px, 1.25vw, 20px);
+      line-height: 1.55;
+      color: rgba(22,22,22,0.72);
+      max-width: 56ch;
+    }
+
+    .cta-actions {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(22,22,22,0.16);
+      padding: 12px 16px;
+      text-decoration: none;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      background: rgba(255,255,255,0.42);
+      transition: transform 0.18s ease, background 0.18s ease;
+      will-change: transform;
+    }
+
+    .btn:hover { background: rgba(255,255,255,0.62); }
+    .btn:active { transform: translate3d(0,1px,0) scale(0.99); }
+
+    .btn-primary {
+      background: rgba(22,22,22,0.90);
+      color: #fff;
+      border-color: rgba(22,22,22,0.90);
+    }
+
+    .btn-primary:hover { background: rgba(22,22,22,0.98); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 920px) {
+      .menu { display: none; }
+      .burger { display: inline-flex; }
+      .nav-inner { justify-content: flex-end; }
+
+      .stage { padding: 16px; }
+      .video-scroll { height: 420vh; }
+      .thoughts-scroll { height: 420vh; }
+      .story-scroll { height: 1100vh; }
+
+      .story-slide {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
+      }
+
+      .story-slide:nth-child(even) .story-media, .story-slide:nth-child(even) .story-copy { order: initial; }
+      .story-copy { justify-content: flex-start; }
+      .story-media { min-height: 44vh; }
+      .story-ghost { display:none; }
+      .faq-inner { grid-template-columns: 1fr; }
+      .faq-side { position: static; }
+      .cta-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .nav-indicator { transition: none; }
+      .burger-lines span { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="top-nav" role="banner">
+    <div class="nav-inner">
+      <nav class="menu" aria-label="Навигация">
+        <span class="nav-indicator" id="navIndicator" aria-hidden="true"></span>
+        <a href="#story-video" data-nav>Знакомство</a>
+        <a href="#faq" data-nav>FAQ</a>
+        <a href="#contacts" data-nav>Контакты</a>
+      </nav>
+
+      <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileDrawer">
+        <span class="burger-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="drawer-scrim" data-drawer-close></div>
+    <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="Мобильное меню">
+      <a href="#story-video" data-nav data-drawer-link>Знакомство</a>
+      <a href="#faq" data-nav data-drawer-link>FAQ</a>
+      <a href="#contacts" data-nav data-drawer-link>Контакты</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- 1) VIDEO: оставляем как есть (без блюра/глубины) -->
+    <section class="scroll-section video-scroll" id="story-video" data-section="story-video">
+      <div class="stage">
+        <div class="video-frame">
+          <img
+            id="scrollVideoFrame"
+            src="assets/video/intro_2241_alpha_frames/frame_0001.png"
+            alt="Видео-сцена"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- 2) THOUGHTS: текст остаётся, анимация другая (без «бури») -->
+    <section class="scroll-section thoughts-scroll" id="thoughts" aria-label="Мысли" data-section="thoughts">
+      <div class="stage">
+        <div class="container">
+          <p class="kicker">Иногда внутри шумно.</p>
+          <h2 class="bigline" data-split>Привет. Похоже на твои мысли?</h2>
+          <p class="subline" data-split>Давай соберём их вместе — спокойно, шаг за шагом.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3) STORY: «картинки + текст рядом» в стиле кинетических переходов -->
+    <section class="scroll-section story-scroll" id="story" aria-label="Сторителлинг" data-section="story">
+      <div class="stage">
+        <div class="story-stack" id="storyStack">
+          <article class="story-slide is-active" data-slide>
+            <div class="story-media"><img src="assets/photos/photo_1.jpg" alt="" loading="eager" decoding="async"></div>
+            <div class="story-copy">
+              <div class="story-ghost" aria-hidden="true">01</div>
+              <p class="story-kicker">Знакомство / 01</p>
+              <h2 class="story-title" data-split>Тревога и перегруз</h2>
+              <p class="story-text">Когда всё становится слишком громким, важно вернуть телу и голове ясный ритм.</p>
+              <ul class="story-list">
+                <li>Снижаем напряжение без «ломания себя».</li>
+                <li>Собираем опоры: сон, дыхание, внимание.</li>
+                <li>Учимся управлять потоком мыслей.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="story-slide" data-slide>
+            <div class="story-media"><img src="assets/photos/photo_4.jpg" alt="" loading="lazy" decoding="async"></div>
+            <div class="story-copy">
+              <div class="story-ghost" aria-hidden="true">02</div>
+              <p class="story-kicker">Знакомство / 02</p>
+              <h2 class="story-title" data-split>Границы и отношения</h2>
+              <p class="story-text">Там, где «неудобно сказать», обычно прячется важное. Делаем его видимым и управляемым.</p>
+              <ul class="story-list">
+                <li>Говорим «нет» без вины и войны.</li>
+                <li>Разбираем повторяющиеся сценарии.</li>
+                <li>Возвращаем себе выбор и спокойствие.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="story-slide" data-slide>
+            <div class="story-media"><img src="assets/photos/photo_9.jpg" alt="" loading="lazy" decoding="async"></div>
+            <div class="story-copy">
+              <div class="story-ghost" aria-hidden="true">03</div>
+              <p class="story-kicker">Знакомство / 03</p>
+              <h2 class="story-title" data-split>Самооценка и внутренний критик</h2>
+              <p class="story-text">Задача не «стать идеальным». Задача — перестать жить под внутренним судом.</p>
+              <ul class="story-list">
+                <li>Отделяем факты от самонаказания.</li>
+                <li>Тренируем устойчивость к стыду.</li>
+                <li>Строим уважение к себе как навык.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="story-slide" data-slide>
+            <div class="story-media"><img src="assets/photos/photo_6.jpg" alt="" loading="lazy" decoding="async"></div>
+            <div class="story-copy">
+              <div class="story-ghost" aria-hidden="true">04</div>
+              <p class="story-kicker">Знакомство / 04</p>
+              <h2 class="story-title" data-split>Ритм и поддержка</h2>
+              <p class="story-text">Работа выглядит как последовательность маленьких шагов. Эти шаги можно делать спокойно.</p>
+              <ul class="story-list">
+                <li>Формируем план без перегруза.</li>
+                <li>Фиксируем прогресс, не требуя «рывка».</li>
+                <li>Упрощаем жизнь там, где можно.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4) ABOUT: без фото -->
+    <section class="about" id="about" aria-label="Обо мне" data-section="about">
+      <div class="container">
+        <p class="kicker">Подход</p>
+        <h2 class="bigline" data-split>Обо мне — без легенд и пафоса.</h2>
+
+        <svg class="about-sigil" viewBox="0 0 720 80" aria-hidden="true">
+          <path id="sigilPath" d="M16 56 C 120 14, 240 14, 344 56 S 568 98, 704 32" />
+        </svg>
+
+        <div class="about-kinetic" aria-hidden="true">
+          <div class="about-row" data-about-row="1"><span class="about-chip">ясность</span><span class="about-chip">ритм</span><span class="about-chip">границы</span><span class="about-chip">поддержка</span><span class="about-chip">шаг за шагом</span><span class="about-chip">ясность</span><span class="about-chip">ритм</span></div>
+          <div class="about-row" data-about-row="2"><span class="about-chip">без пафоса</span><span class="about-chip">без спешки</span><span class="about-chip">без давления</span><span class="about-chip">с опорой</span><span class="about-chip">с конкретикой</span><span class="about-chip">без пафоса</span></div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card" data-about-card>
+            <h3>Простота</h3>
+            <p>Мы не усложняем там, где можно быть ясными. Никакой мистики: только наблюдение, гипотезы, проверка, практика.</p>
+          </div>
+          <div class="about-card" data-about-card>
+            <h3>Точность</h3>
+            <p>Мы ищем не «всё про вас», а конкретные узлы: где ломается ритм, где появляется страх, где теряется опора.</p>
+          </div>
+          <div class="about-card" data-about-card>
+            <h3>Тепло</h3>
+            <p>Контакт важен. В работе есть строгость и есть поддержка. Это не конфликт, это баланс.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5) FAQ: крутая анимация + скролл-активация -->
+    <section class="scroll-section faq-scroll" id="faq" data-section="faq" aria-label="FAQ">
+      <div class="stage">
+        <div class="faq-panel">
+          <div class="faq-bg" id="faqBg" aria-hidden="true"></div>
+          <div class="faq-inner">
+            <div class="faq-side">
+              <h2 class="faq-title" data-split>FAQ</h2>
+              <p class="cta-text" style="margin-top:12px;max-width:28ch;">Ответы появляются по скроллу и остаются кликабельными — можно читать в своём темпе.</p>
+              <div class="faq-progress" aria-hidden="true"><div class="faq-progress-bar" id="faqProgressBar"></div></div>
+            </div>
+
+            <div class="faq-items" id="faqItems">
+              <div class="faq-item" data-faq>
+                <div class="faq-q"><span>Сколько длится сессия?</span><span aria-hidden="true">+</span></div>
+                <div class="faq-a"><p>Обычно 50–60 минут. Формат обсуждаем заранее, чтобы не было сюрпризов и перегруза.</p></div>
+              </div>
+              <div class="faq-item" data-faq>
+                <div class="faq-q"><span>Онлайн или офлайн?</span><span aria-hidden="true">+</span></div>
+                <div class="faq-a"><p>Онлайн работает отлично, если есть тихое место и стабильная связь. Офлайн — по договорённости.</p></div>
+              </div>
+              <div class="faq-item" data-faq>
+                <div class="faq-q"><span>Как часто встречаемся?</span><span aria-hidden="true">+</span></div>
+                <div class="faq-a"><p>Чаще всего 1 раз в неделю. Иногда — реже, если нужен более мягкий ритм.</p></div>
+              </div>
+              <div class="faq-item" data-faq>
+                <div class="faq-q"><span>Сколько нужно сессий?</span><span aria-hidden="true">+</span></div>
+                <div class="faq-a"><p>Зависит от запроса. Мы фиксируем первые изменения, затем решаем: продолжать, замедляться, завершать.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6) CONTACTS: только Telegram -->
+    <section class="contacts" id="contacts" data-section="contacts" aria-label="Контакты">
+      <div class="cta">
+        <div class="cta-inner">
+          <div class="cta-grid">
+            <div>
+              <h2 class="cta-title" data-split>Давай начнём с простого.</h2>
+              <p class="cta-text">Напиши в Telegram: коротко, как ты сейчас. Дальше я помогу собрать запрос и выбрать ритм.</p>
+              <div class="cta-actions">
+                <a class="btn btn-primary" href="https://t.me/OliaZhukova" target="_blank" rel="noopener">Telegram</a>
+              </div>
+            </div>
+            <div class="cta-card" data-cta-card>
+              <h3>Как это происходит</h3>
+              <p>1) Пишете в Telegram → 2) коротко фиксируем запрос → 3) выбираем формат и время → 4) начинаем без лишней бюрократии.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+  <script>
+    (function () {
+      const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // ===== Smooth anchor scroll =====
+      function scrollToHash(hash) {
+        const el = document.querySelector(hash);
+        if (!el) return;
+        el.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'start' });
+      }
+
+      document.addEventListener('click', (e) => {
+        const link = e.target.closest('a[data-nav]');
+        if (!link) return;
+        const href = link.getAttribute('href') || '';
+        if (!href.startsWith('#')) return;
+        e.preventDefault();
+        scrollToHash(href);
+        history.replaceState(null, '', href);
+      });
+
+      // ===== Desktop indicator =====
+      const indicator = document.getElementById('navIndicator');
+      const nav = document.querySelector('.menu');
+      const navLinks = nav ? Array.from(nav.querySelectorAll('a[data-nav]')) : [];
+
+      function moveIndicatorTo(link) {
+        if (!indicator || !nav || !link) return;
+        const navRect = nav.getBoundingClientRect();
+        const r = link.getBoundingClientRect();
+        const left = Math.max(8, r.left - navRect.left);
+        const width = Math.max(48, r.width);
+        indicator.style.width = width + 'px';
+        indicator.style.transform = `translate3d(${left}px,0,0)`;
+      }
+
+      function setActiveLinkById(sectionId) {
+        navLinks.forEach((a) => a.classList.toggle('is-active', a.getAttribute('href') === '#' + sectionId));
+        const active = navLinks.find((a) => a.classList.contains('is-active')) || navLinks[0];
+        moveIndicatorTo(active);
+      }
+
+      if (navLinks.length) {
+        navLinks.forEach((a) => {
+          a.addEventListener('mouseenter', () => moveIndicatorTo(a));
+          a.addEventListener('focus', () => moveIndicatorTo(a));
+        });
+        nav.addEventListener('mouseleave', () => {
+          const active = navLinks.find((a) => a.classList.contains('is-active')) || navLinks[0];
+          moveIndicatorTo(active);
+        });
+      }
+
+      // ===== Mobile drawer =====
+      const drawer = document.getElementById('mobileDrawer');
+      const burger = document.getElementById('burger');
+      const drawerPanel = drawer ? drawer.querySelector('.drawer-panel') : null;
+      const drawerScrim = drawer ? drawer.querySelector('.drawer-scrim') : null;
+      const drawerLinks = drawer ? Array.from(drawer.querySelectorAll('[data-drawer-link]')) : [];
+
+      function openDrawer() {
+        if (!drawer || !burger || !drawerPanel || !drawerScrim) return;
+        drawer.classList.add('is-open');
+        drawer.setAttribute('aria-hidden', 'false');
+        burger.setAttribute('aria-expanded', 'true');
+
+        if (prefersReduced || !window.gsap) {
+          drawerScrim.style.opacity = '1';
+          drawerPanel.style.opacity = '1';
+          drawerPanel.style.transform = 'translate3d(0,0,0) scale(1)';
+          drawerPanel.style.clipPath = 'circle(140% at calc(100% - 36px) 18px)';
+          drawerPanel.style.webkitClipPath = drawerPanel.style.clipPath;
+          return;
+        }
+
+        gsap.killTweensOf([drawerScrim, drawerPanel, drawerLinks]);
+        gsap.set(drawerLinks, { y: 10, opacity: 0 });
+        gsap.to(drawerScrim, { opacity: 1, duration: 0.25, ease: 'power2.out' });
+        gsap.to(drawerPanel, {
+          opacity: 1,
+          duration: 0.45,
+          ease: 'power3.out',
+          clipPath: 'circle(140% at calc(100% - 36px) 18px)',
+          webkitClipPath: 'circle(140% at calc(100% - 36px) 18px)',
+          transform: 'translate3d(0,0,0) scale(1)'
+        });
+        gsap.to(drawerLinks, { y: 0, opacity: 1, duration: 0.45, ease: 'power3.out', stagger: 0.06, delay: 0.08 });
+      }
+
+      function closeDrawer() {
+        if (!drawer || !burger || !drawerPanel || !drawerScrim) return;
+        burger.setAttribute('aria-expanded', 'false');
+
+        if (prefersReduced || !window.gsap) {
+          drawer.classList.remove('is-open');
+          drawer.setAttribute('aria-hidden', 'true');
+          drawerScrim.style.opacity = '0';
+          drawerPanel.style.opacity = '0';
+          drawerPanel.style.transform = 'translate3d(0,-10px,0) scale(0.98)';
+          drawerPanel.style.clipPath = 'circle(0px at calc(100% - 36px) 18px)';
+          drawerPanel.style.webkitClipPath = drawerPanel.style.clipPath;
+          return;
+        }
+
+        gsap.killTweensOf([drawerScrim, drawerPanel, drawerLinks]);
+        gsap.to(drawerLinks, { y: 8, opacity: 0, duration: 0.22, ease: 'power2.in' });
+        gsap.to(drawerScrim, { opacity: 0, duration: 0.22, ease: 'power2.in' });
+        gsap.to(drawerPanel, {
+          opacity: 0,
+          duration: 0.28,
+          ease: 'power2.in',
+          clipPath: 'circle(0px at calc(100% - 36px) 18px)',
+          webkitClipPath: 'circle(0px at calc(100% - 36px) 18px)',
+          transform: 'translate3d(0,-10px,0) scale(0.98)',
+          onComplete: () => {
+            drawer.classList.remove('is-open');
+            drawer.setAttribute('aria-hidden', 'true');
+          }
+        });
+      }
+
+      if (burger) {
+        burger.addEventListener('click', () => {
+          const isOpen = burger.getAttribute('aria-expanded') === 'true';
+          isOpen ? closeDrawer() : openDrawer();
+        });
+      }
+
+      if (drawerScrim) drawerScrim.addEventListener('click', closeDrawer);
+      window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
+      drawerLinks.forEach((a) => a.addEventListener('click', closeDrawer));
+
+      // ===== Video scroll frames (оставляем) =====
+      const scrollVideoSection = document.getElementById('story-video');
+      const scrollVideoFrame = document.getElementById('scrollVideoFrame');
+      let scrollVideoFrameCount = 69;
+      let currentScrollVideoFrame = -1;
+      let videoTargetProgress = 1;
+      let videoCurrentProgress = 1;
+      let raf = 0;
+      let lastTs = 0;
+      const SPEED = 0.22;
+
+      function clamp(v, min, max) { return Math.min(max, Math.max(min, v)); }
+
+      function sectionProgress(section) {
+        const start = section.offsetTop;
+        const end = start + section.offsetHeight - window.innerHeight;
+        if (end <= start) return 0;
+        return clamp((window.scrollY - start) / (end - start), 0, 1);
+      }
+
+      function framePath(index) {
+        const n = String(index + 1).padStart(4, '0');
+        return `assets/video/intro_2241_alpha_frames/frame_${n}.png`;
+      }
+
+      function setFrame(index) {
+        const safe = Math.round(clamp(index, 0, scrollVideoFrameCount - 1));
+        if (safe === currentScrollVideoFrame) return;
+        currentScrollVideoFrame = safe;
+        scrollVideoFrame.src = framePath(safe);
+      }
+
+      function updateTarget() {
+        if (!scrollVideoSection) return;
+        videoTargetProgress = 1 - sectionProgress(scrollVideoSection);
+      }
+
+      function renderByProgress(p) {
+        const frame = Math.round(clamp(p, 0, 1) * (scrollVideoFrameCount - 1));
+        setFrame(frame);
+      }
+
+      function tick(now) {
+        if (!lastTs) lastTs = now;
+        const dt = Math.min(0.06, Math.max(0.001, (now - lastTs) / 1000));
+        lastTs = now;
+
+        const diff = videoTargetProgress - videoCurrentProgress;
+        const maxStep = SPEED * dt;
+        if (Math.abs(diff) <= maxStep) videoCurrentProgress = videoTargetProgress;
+        else videoCurrentProgress += Math.sign(diff) * maxStep;
+
+        renderByProgress(videoCurrentProgress);
+
+        if (Math.abs(videoTargetProgress - videoCurrentProgress) > 0.0005) raf = requestAnimationFrame(tick);
+        else { raf = 0; lastTs = 0; }
+      }
+
+      function ensureTicker() { if (!raf) raf = requestAnimationFrame(tick); }
+
+      async function initVideo() {
+        try {
+          const r = await fetch('assets/video/intro_2241_alpha_frames/manifest.json', { cache: 'no-cache' });
+          if (r.ok) {
+            const m = await r.json();
+            const n = Number(m.frameCount);
+            if (Number.isFinite(n) && n > 0) scrollVideoFrameCount = Math.floor(n);
+          }
+        } catch (_) {}
+
+        setFrame(0);
+        updateTarget();
+        videoCurrentProgress = videoTargetProgress;
+        renderByProgress(videoCurrentProgress);
+        ensureTicker();
+      }
+
+      // ===== Split to chars =====
+      function splitToChars(el) {
+        const text = (el.textContent || '').replace(/\s+/g, ' ').trim();
+        el.textContent = '';
+        const frag = document.createDocumentFragment();
+        Array.from(text).forEach((ch) => {
+          const span = document.createElement('span');
+          span.className = 'char';
+          span.textContent = ch === ' ' ? '\u00A0' : ch;
+          frag.appendChild(span);
+        });
+        el.appendChild(frag);
+        return Array.from(el.querySelectorAll('.char'));
+      }
+
+      const splitNodes = Array.from(document.querySelectorAll('[data-split]'));
+      const splitMap = new Map();
+      splitNodes.forEach((el) => splitMap.set(el, splitToChars(el)));
+
+      function wrapLineMasks(scope) {
+        if (!scope) return [];
+        const targets = Array.from(scope.querySelectorAll('.story-title, .story-text, .story-list, .story-kicker'));
+        const wrapped = [];
+        targets.forEach((node) => {
+          if (!node || node.closest('.line-mask')) return;
+          const mask = document.createElement('div');
+          mask.className = 'line-mask';
+          node.parentNode.insertBefore(mask, node);
+          mask.appendChild(node);
+          wrapped.push(node);
+        });
+        return wrapped;
+      }
+
+      function applySectionScrollDurations() {
+        const vhPerSceneDesktop = 300;
+        const vhPerSceneMobile = 320;
+        const isMobile = window.matchMedia('(max-width: 920px)').matches;
+        const unit = isMobile ? vhPerSceneMobile : vhPerSceneDesktop;
+
+        const video = document.getElementById('story-video');
+        const thoughts = document.getElementById('thoughts');
+        const faq = document.getElementById('faq');
+        if (video) video.style.height = `${Math.round(unit + 100)}vh`;
+        if (thoughts) thoughts.style.height = `${Math.round(unit + 100)}vh`;
+        if (faq) faq.style.height = `${Math.round(unit + 100)}vh`;
+
+        const story = document.getElementById('story');
+        if (story) {
+          const slidesCount = story.querySelectorAll('[data-slide]').length || 1;
+          story.style.height = `${Math.round(slidesCount * unit + 100)}vh`;
+        }
+      }
+
+      function initGSAP() {
+        if (!window.gsap || !window.ScrollTrigger) return;
+        gsap.registerPlugin(ScrollTrigger);
+        if (prefersReduced) return;
+
+        // Active link tracking (for indicator)
+        const tracked = ['story-video', 'faq', 'contacts'];
+        tracked.forEach((id) => {
+          ScrollTrigger.create({
+            trigger: document.getElementById(id),
+            start: 'top center',
+            end: 'bottom center',
+            onEnter: () => setActiveLinkById(id),
+            onEnterBack: () => setActiveLinkById(id)
+          });
+        });
+        setActiveLinkById('story-video');
+
+        // THOUGHTS: calm kinetic reveal
+        const thoughts = document.getElementById('thoughts');
+        const big = thoughts ? thoughts.querySelector('.bigline') : null;
+        const sub = thoughts ? thoughts.querySelector('.subline') : null;
+        const kicker = thoughts ? thoughts.querySelector('.kicker') : null;
+
+        if (thoughts && big && sub && kicker) {
+          const bigChars = splitMap.get(big) || [];
+          const subChars = splitMap.get(sub) || [];
+
+          gsap.set([bigChars, subChars], { opacity: 0 });
+          gsap.set(kicker, { opacity: 0, y: 10 });
+
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: thoughts,
+              start: 'top top',
+              end: 'bottom top',
+              scrub: true
+            }
+          });
+
+          tl.to(kicker, { opacity: 1, y: 0, duration: 0.2 }, 0.05);
+          tl.fromTo(bigChars,
+            { y: (i) => (i % 2 ? 28 : -28), rotate: (i) => (i % 3 ? 0.6 : -0.6), opacity: 0 },
+            { y: 0, rotate: 0, opacity: 1, duration: 0.6, stagger: 0.008, ease: 'power3.out' },
+            0.12
+          );
+          tl.to(bigChars, { opacity: 0, y: -20, duration: 0.35, stagger: 0.006, ease: 'power2.in' }, 0.62);
+          tl.fromTo(subChars,
+            { y: 18, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.55, stagger: 0.004, ease: 'power3.out' },
+            0.70
+          );
+        }
+
+        // STORY: sticky stage + scrubbed transitions
+        const story = document.getElementById('story');
+        const stack = document.getElementById('storyStack');
+        if (story && stack) {
+          const slides = Array.from(stack.querySelectorAll('[data-slide]'));
+          slides.forEach((s) => wrapLineMasks(s));
+          slides.forEach((s, i) => {
+            gsap.set(s, { autoAlpha: i === 0 ? 1 : 0 });
+            if (i === 0) s.classList.add('is-active');
+          });
+
+          const titles = slides.map((s) => s.querySelector('.story-title'));
+          const titleCharsBySlide = titles.map((t) => (t ? (splitMap.get(t) || []) : []));
+
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: story,
+              start: 'top top',
+              end: 'bottom top',
+              scrub: true
+            }
+          });
+
+          slides.forEach((slide, i) => {
+            const media = slide.querySelector('.story-media');
+            const img = slide.querySelector('img');
+            const titleChars = titleCharsBySlide[i] || [];
+            const kicker = slide.querySelector('.story-kicker');
+            const textNode = slide.querySelector('.story-text');
+            const listNode = slide.querySelector('.story-list');
+            const ghost = slide.querySelector('.story-ghost');
+            const copyNodes = [kicker, textNode, listNode].filter(Boolean);
+            const next = slides[i + 1];
+
+            const t0 = i * 1.0;
+            const enter = t0 + 0.00;
+            const hold = t0 + 0.35;
+            const exit = t0 + 0.72;
+
+            if (media) {
+              tl.fromTo(media,
+                { clipPath: i === 0 ? 'inset(0 0 0 0 round 26px)' : (i % 2 ? 'inset(0 100% 0 0 round 26px)' : 'inset(0 0 0 100% round 26px)'),
+                  webkitClipPath: i === 0 ? 'inset(0 0 0 0 round 26px)' : (i % 2 ? 'inset(0 100% 0 0 round 26px)' : 'inset(0 0 0 100% round 26px)') },
+                { clipPath: 'inset(0 0 0 0 round 26px)', webkitClipPath: 'inset(0 0 0 0 round 26px)', duration: 0.24, ease: 'power3.out' },
+                enter
+              );
+            }
+            if (img) {
+              tl.fromTo(img,
+                { scale: i === 0 ? 1.03 : 1.12, xPercent: i % 2 ? -3 : 3, rotateZ: i % 2 ? -0.35 : 0.35 },
+                { scale: 1.03, xPercent: 0, rotateZ: 0, duration: 0.30, ease: 'power3.out' },
+                enter
+              );
+              tl.to(img, { scale: 1.07, xPercent: i % 2 ? 1.4 : -1.4, duration: 0.42, ease: 'none' }, hold);
+            }
+            if (ghost) tl.fromTo(ghost, { xPercent: 12, opacity: 0 }, { xPercent: 0, opacity: 1, duration: 0.22, ease: 'power2.out' }, enter + 0.03);
+            if (kicker) tl.fromTo(kicker, { yPercent: 120, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.18, ease: 'power3.out' }, enter + 0.03);
+
+            if (titleChars.length) {
+              tl.fromTo(titleChars,
+                { yPercent: 115, xPercent: (idx) => ((idx % 2 ? 1 : -1) * 5), opacity: 0, skewY: i % 2 ? -8 : 8 },
+                { yPercent: 0, xPercent: 0, opacity: 1, skewY: 0, stagger: 0.006, duration: 0.30, ease: 'power3.out' },
+                enter + 0.05
+              );
+            }
+            if (textNode) tl.fromTo(textNode, { yPercent: 120, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.20, ease: 'power3.out' }, enter + 0.09);
+            if (listNode) tl.fromTo(listNode, { yPercent: 120, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.22, ease: 'power3.out' }, enter + 0.12);
+
+            // hold micro-motion on copy container
+            const copy = slide.querySelector('.story-copy');
+            if (copy) tl.to(copy, { y: i % 2 ? -3 : 3, duration: 0.25, ease: 'none' }, hold);
+
+            // exit current
+            if (titleChars.length) tl.to(titleChars, { yPercent: -85, opacity: 0, stagger: 0.005, duration: 0.16, ease: 'power2.in' }, exit);
+            copyNodes.forEach((node, idx2) => tl.to(node, { yPercent: -80, opacity: 0, duration: 0.16, ease: 'power2.in' }, exit + idx2 * 0.02));
+            if (ghost) tl.to(ghost, { xPercent: -8, opacity: 0, duration: 0.16, ease: 'power2.in' }, exit);
+            if (media) tl.to(media, {
+              clipPath: i % 2 ? 'inset(0 0 0 100% round 26px)' : 'inset(0 100% 0 0 round 26px)',
+              webkitClipPath: i % 2 ? 'inset(0 0 0 100% round 26px)' : 'inset(0 100% 0 0 round 26px)',
+              duration: 0.20, ease: 'power2.in'
+            }, exit + 0.02);
+
+            if (next) {
+              tl.set(next, { autoAlpha: 1 }, exit + 0.02);
+              tl.call(() => { slide.classList.remove('is-active'); next.classList.add('is-active'); }, null, exit + 0.03);
+            }
+            tl.to(slide, { autoAlpha: next ? 0 : 1, duration: 0.01 }, t0 + 0.98);
+          });
+        }
+
+        // ABOUT: kinetic rows + sigil + cards (без фото)
+        const about = document.getElementById('about');
+        const sigil = document.getElementById('sigilPath');
+        const aboutRows = Array.from(document.querySelectorAll('[data-about-row]'));
+        const aboutCards = Array.from(document.querySelectorAll('[data-about-card]'));
+        const aboutTitle = about ? about.querySelector('.bigline') : null;
+        if (about && aboutTitle) {
+          const titleChars = splitMap.get(aboutTitle) || [];
+          if (titleChars.length) {
+            gsap.fromTo(titleChars,
+              { yPercent: 95, opacity: 0 },
+              { yPercent: 0, opacity: 1, stagger: 0.007, duration: 0.6, ease: 'power3.out', scrollTrigger: { trigger: '#about', start: 'top 70%', end: 'top 30%', scrub: true } }
+            );
+          }
+        }
+        if (sigil) {
+          const len = sigil.getTotalLength();
+          gsap.set(sigil, { strokeDasharray: len, strokeDashoffset: len });
+          gsap.to(sigil, {
+            strokeDashoffset: 0,
+            duration: 1.0,
+            ease: 'none',
+            scrollTrigger: { trigger: '#about', start: 'top 75%', end: 'top 20%', scrub: true }
+          });
+        }
+        aboutRows.forEach((row, i) => {
+          gsap.fromTo(row,
+            { xPercent: i === 0 ? -14 : 14 },
+            { xPercent: i === 0 ? 10 : -10, ease: 'none', scrollTrigger: { trigger: '#about', start: 'top bottom', end: 'bottom top', scrub: true } }
+          );
+        });
+        if (aboutCards.length) {
+          gsap.fromTo(aboutCards,
+            { y: 24, opacity: 0, rotateX: 8 },
+            {
+              y: 0,
+              opacity: 1,
+              rotateX: 0,
+              duration: 0.7,
+              ease: 'power3.out',
+              stagger: 0.10,
+              scrollTrigger: { trigger: '#about', start: 'top 62%', end: 'top 18%', scrub: true }
+            }
+          );
+        }
+
+        // FAQ: scroll-driven active item + living background
+        const faq = document.getElementById('faq');
+        const faqBg = document.getElementById('faqBg');
+        const faqProgressBar = document.getElementById('faqProgressBar');
+        const faqItems = Array.from(document.querySelectorAll('[data-faq]'));
+        const answers = faqItems.map((it) => it.querySelector('.faq-a'));
+
+        function setFaqActive(index) {
+          faqItems.forEach((it, i) => it.dataset.active = i === index ? '1' : '0');
+          answers.forEach((a, i) => {
+            if (!a) return;
+            gsap.to(a, { height: i === index ? 'auto' : 0, duration: 0.35, ease: 'power3.out' });
+          });
+        }
+
+        if (faq && faqItems.length) {
+          gsap.set(answers, { height: 0 });
+          setFaqActive(0);
+          faqItems.forEach((it, i) => it.addEventListener('click', () => setFaqActive(i)));
+
+          ScrollTrigger.create({
+            trigger: faq,
+            start: 'top top',
+            end: 'bottom top',
+            scrub: true,
+            onUpdate: (self) => {
+              const t = clamp(self.progress, 0, 0.9999);
+              const idx = Math.floor(t * faqItems.length);
+              setFaqActive(idx);
+              if (faqProgressBar) faqProgressBar.style.width = `${Math.min(100, Math.max(0, self.progress * 100))}%`;
+              faqItems.forEach((it, i) => {
+                const d = Math.abs(i - idx);
+                gsap.to(it, { y: d === 0 ? 0 : d * 6, scale: d === 0 ? 1 : (1 - d * 0.015), opacity: d > 2 ? 0.75 : 1, duration: 0.22, overwrite: true });
+              });
+              if (faqBg) {
+                const x = (self.progress * 90) - 45;
+                const y = Math.sin(self.progress * Math.PI * 2) * 18;
+                faqBg.style.transform = `translate3d(${x}px, ${y}px, 0) rotate(${self.progress * 16}deg)`;
+              }
+            }
+          });
+        }
+
+        // CONTACTS: title + card + buttons reveal
+        const contactsSec = document.getElementById('contacts');
+        const cta = contactsSec ? contactsSec.querySelector('.cta') : null;
+        const ctaTitle = contactsSec ? contactsSec.querySelector('.cta-title') : null;
+        const ctaText = contactsSec ? contactsSec.querySelector('.cta-text') : null;
+        const ctaCard = contactsSec ? contactsSec.querySelector('[data-cta-card]') : null;
+        const ctaBtns = contactsSec ? Array.from(contactsSec.querySelectorAll('.cta-actions .btn')) : [];
+        if (contactsSec && cta) {
+          const tlC = gsap.timeline({
+            scrollTrigger: { trigger: '#contacts', start: 'top 78%', end: 'top 20%', scrub: true }
+          });
+          tlC.fromTo(cta, { y: 30, opacity: 0.4, scale: 0.985 }, { y: 0, opacity: 1, scale: 1, duration: 0.45, ease: 'power3.out' }, 0);
+          if (ctaTitle) {
+            const chars = splitMap.get(ctaTitle) || [];
+            if (chars.length) tlC.fromTo(chars, { yPercent: 90, opacity: 0 }, { yPercent: 0, opacity: 1, stagger: 0.006, duration: 0.32, ease: 'power3.out' }, 0.05);
+          }
+          if (ctaText) tlC.fromTo(ctaText, { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: 0.22, ease: 'power2.out' }, 0.12);
+          if (ctaCard) tlC.fromTo(ctaCard, { x: 18, opacity: 0, rotateY: -6 }, { x: 0, opacity: 1, rotateY: 0, duration: 0.28, ease: 'power3.out' }, 0.14);
+          if (ctaBtns.length) tlC.fromTo(ctaBtns, { y: 12, opacity: 0 }, { y: 0, opacity: 1, duration: 0.22, stagger: 0.05, ease: 'power3.out' }, 0.18);
+        }
+      }
+
+      // Fallback intersection for nav, if GSAP not loaded
+      const obsSections = ['story-video','faq','contacts']
+        .map((id) => document.getElementById(id))
+        .filter(Boolean);
+
+      if (!prefersReduced && navLinks.length) {
+        const io = new IntersectionObserver((entries) => {
+          const visible = entries
+            .filter((e) => e.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+          if (visible) setActiveLinkById(visible.target.id);
+        }, { threshold: [0.2, 0.35, 0.5, 0.7] });
+        obsSections.forEach((s) => io.observe(s));
+      } else {
+        setActiveLinkById('story-video');
+      }
+
+      window.addEventListener('load', () => {
+        const active = navLinks.find((a) => a.classList.contains('is-active')) || navLinks[0];
+        moveIndicatorTo(active);
+      });
+
+      window.addEventListener('resize', () => {
+        const active = navLinks.find((a) => a.classList.contains('is-active')) || navLinks[0];
+        moveIndicatorTo(active);
+        applySectionScrollDurations();
+        updateTarget();
+        ensureTicker();
+        if (window.ScrollTrigger) ScrollTrigger.refresh();
+      });
+
+      window.addEventListener('scroll', () => {
+        updateTarget();
+        ensureTicker();
+      }, { passive: true });
+
+      applySectionScrollDurations();
+      initVideo();
+      initGSAP();
+    })();
+  </script>
+</body>
+</html>

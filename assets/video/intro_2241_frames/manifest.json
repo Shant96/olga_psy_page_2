@@ -1,0 +1,6 @@
+{
+  "source": "assets/video/IMG_2241_faststart.MP4",
+  "fps": 8,
+  "framePattern": "assets/video/intro_2241_frames/frame_%04d.jpg",
+  "frameCount": 69
+}

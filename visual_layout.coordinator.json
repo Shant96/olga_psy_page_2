@@ -1,0 +1,283 @@
+{
+  "meta": {
+    "version": 1,
+    "basePage": "index.html",
+    "viewport": {
+      "width": 1512,
+      "height": 982
+    },
+    "notes": "visuals[] заполняется вручную через coordinator.html. Координаты в процентах экрана."
+  },
+  "sections": [
+    {
+      "id": "story-video",
+      "label": "Видео (старт)",
+      "textSelector": "#story-video",
+      "minDistanceFromTextPct": 6
+    },
+    {
+      "id": "intro",
+      "label": "Мысли",
+      "textSelector": "#intro .storm-wrap",
+      "minDistanceFromTextPct": 7
+    },
+    {
+      "id": "support",
+      "label": "Ты не один",
+      "textSelector": "#support .support-content",
+      "minDistanceFromTextPct": 8
+    },
+    {
+      "id": "services",
+      "label": "С чем работаю",
+      "textSelector": "#services .section-layout > div",
+      "minDistanceFromTextPct": 7
+    },
+    {
+      "id": "process",
+      "label": "Как проходит",
+      "textSelector": "#process .section-layout > div",
+      "minDistanceFromTextPct": 7
+    },
+    {
+      "id": "about",
+      "label": "Обо мне",
+      "textSelector": "#about .section-layout > div",
+      "minDistanceFromTextPct": 7
+    },
+    {
+      "id": "faq",
+      "label": "FAQ",
+      "textSelector": "#faq .screen-content",
+      "minDistanceFromTextPct": 7
+    },
+    {
+      "id": "contacts",
+      "label": "Контакты",
+      "textSelector": "#contacts .screen-content",
+      "minDistanceFromTextPct": 7
+    }
+  ],
+  "visuals": [
+    {
+      "id": "visual_1771523821272_b1b16",
+      "name": "layer_40",
+      "file": "assets/library/extracted/layer_40.svg",
+      "assetId": "asset_0007",
+      "sectionId": "support",
+      "visible": true,
+      "desktop": {
+        "x": 80.256,
+        "y": 28.888,
+        "w": 46.4,
+        "h": 46.4,
+        "rotate": 0,
+        "z": 20
+      },
+      "textOffset": {
+        "dxPct": 50.087,
+        "dyPct": -18.391,
+        "distancePct": 53.356,
+        "minDistancePct": 8
+      }
+    },
+    {
+      "id": "visual_1771523827733_87ea7",
+      "name": "layer_8_copy_3_smartobject",
+      "file": "assets/scene1/layer_8_copy_3_smartobject.png",
+      "assetId": "asset_0032",
+      "sectionId": "support",
+      "visible": true,
+      "desktop": {
+        "x": 81.363,
+        "y": 70.706,
+        "w": 81.6,
+        "h": 81.6,
+        "rotate": 0,
+        "z": 20
+      },
+      "textOffset": {
+        "dxPct": 51.194,
+        "dyPct": 23.427,
+        "distancePct": 56.3,
+        "minDistancePct": 8
+      }
+    },
+    {
+      "id": "visual_1771523975079_69cdb",
+      "name": "layer_9_copy_2_smartobject",
+      "file": "assets/scene2/layer_9_copy_2_smartobject.png",
+      "assetId": "asset_0042",
+      "sectionId": "services",
+      "visible": true,
+      "desktop": {
+        "x": 77.123,
+        "y": 67.672,
+        "w": 64.8,
+        "h": 64.8,
+        "rotate": 0,
+        "z": 20
+      },
+      "textOffset": {
+        "dxPct": 49.356,
+        "dyPct": 21.806,
+        "distancePct": 53.959,
+        "minDistancePct": 7
+      }
+    },
+    {
+      "id": "visual_1771524041125_4a050",
+      "name": "layer_65_pixel",
+      "file": "assets/scene5/layer_65_pixel.png",
+      "assetId": "asset_0078",
+      "sectionId": "services",
+      "visible": true,
+      "desktop": {
+        "x": 89.949,
+        "y": 36.88,
+        "w": 8,
+        "h": 8,
+        "rotate": 0,
+        "z": 20
+      },
+      "textOffset": {
+        "dxPct": 62.182,
+        "dyPct": -8.986,
+        "distancePct": 62.828,
+        "minDistancePct": 7
+      }
+    },
+    {
+      "id": "visual_1771524056845_f2b91",
+      "name": "layer_66_pixel",
+      "file": "assets/scene5/layer_66_pixel.png",
+      "assetId": "asset_0079",
+      "sectionId": "services",
+      "visible": true,
+      "desktop": {
+        "x": 67.94,
+        "y": 27.868,
+        "w": 4.8,
+        "h": 4.8,
+        "rotate": 0,
+        "z": 20
+      },
+      "textOffset": {
+        "dxPct": 40.173,
+        "dyPct": -17.998,
+        "distancePct": 44.021,
+        "minDistancePct": 7
+      }
+    },
+    {
+      "id": "visual_1771524208797_d7577",
+      "name": "girl_corrected_group5",
+      "file": "assets/library/extracted/girl_corrected_group5.png",
+      "assetId": "asset_0001",
+      "sectionId": "process",
+      "visible": true,
+      "desktop": {
+        "x": 60.993,
+        "y": 75.518,
+        "w": 70.4,
+        "h": 70.4,
+        "rotate": 0,
+        "z": 20
+      },
+      "textOffset": {
+        "dxPct": 50.226,
+        "dyPct": 18.652,
+        "distancePct": 10.578,
+        "minDistancePct": 7
+      }
+    },
+    {
+      "id": "visual_1771524353418_11b76",
+      "name": "layer_120",
+      "file": "assets/library/extracted/layer_120.svg",
+      "assetId": "asset_0003",
+      "sectionId": "process",
+      "visible": true,
+      "desktop": {
+        "x": 58.683,
+        "y": 24.819,
+        "w": 29.6,
+        "h": 29.6,
+        "rotate": 180,
+        "z": 20
+      },
+      "textOffset": {
+        "dxPct": 30.916,
+        "dyPct": -21.047,
+        "distancePct": 37.4,
+        "minDistancePct": 7
+      }
+    },
+    {
+      "id": "visual_1771524452434_0b24d",
+      "name": "приходи_smartobject",
+      "file": "assets/scene2/приходи_smartobject.png",
+      "assetId": "asset_0033",
+      "sectionId": "about",
+      "visible": true,
+      "desktop": {
+        "x": 77.203,
+        "y": 61.029,
+        "w": 68,
+        "h": 68,
+        "rotate": 0,
+        "z": 20
+      },
+      "textOffset": {
+        "dxPct": 49.436,
+        "dyPct": 15.163,
+        "distancePct": 51.709,
+        "minDistancePct": 7
+      }
+    },
+    {
+      "id": "visual_1771524461987_11414",
+      "name": "layer_49_smartobject",
+      "file": "assets/scene2/layer_49_smartobject.png",
+      "assetId": "asset_0038",
+      "sectionId": "about",
+      "visible": true,
+      "desktop": {
+        "x": 0.007,
+        "y": 50.28,
+        "w": 31.2,
+        "h": 31.2,
+        "rotate": 0,
+        "z": 20
+      },
+      "textOffset": {
+        "dxPct": -12.76,
+        "dyPct": 37.414,
+        "distancePct": 39.53,
+        "minDistancePct": 7
+      }
+    },
+    {
+      "id": "visual_1771525510996_173c9",
+      "name": "layer_49_smartobject",
+      "file": "assets/scene2/layer_49_smartobject.png",
+      "assetId": "asset_0038",
+      "sectionId": "services",
+      "visible": true,
+      "desktop": {
+        "x": 13.199,
+        "y": 85.093,
+        "w": 28.8,
+        "h": 28.8,
+        "rotate": 0,
+        "z": 20
+      },
+      "textOffset": {
+        "dxPct": -14.568,
+        "dyPct": 39.227,
+        "distancePct": 41.845,
+        "minDistancePct": 7
+      }
+    }
+  ]
+}

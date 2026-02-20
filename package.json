@@ -1,0 +1,20 @@
+{
+  "name": "story-landing",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "serve": "bash scripts/run_site_server.sh 4310",
+    "extract:references": "python3 scripts/extract_references.py",
+    "build:manifest": "python3 scripts/build_story_manifest.py",
+    "build:coordinator-catalog": "node scripts/build_coordinator_catalog.mjs",
+    "check:smoke": "node scripts/run_smoke_check.mjs",
+    "test:visual": "playwright test tests/visual.spec.ts",
+    "check:diff": "node scripts/visual_diff.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.54.2",
+    "pixelmatch": "^7.1.0",
+    "pngjs": "^7.0.0"
+  }
+}
